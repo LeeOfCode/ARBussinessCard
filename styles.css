@@ -10,7 +10,7 @@ html, body {
     width: 1004px;
     height: 591px;
     margin: 20px auto;
-    background: #e5baba;
+    background: #B9FCFF;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
@@ -29,11 +29,19 @@ html, body {
     font-family: "Trebuchet MS", sans-serif; 
   }
   #my-card .info h1 {
+    color: #45DEEF;
     font-size: 55px;
     margin: 0 0 5px;
   }
   #my-card .info p {
+    color: #45DEEF;
     font-size: 40px;
     margin: 5px 0;
+  }
+
+  #player {
+    visibility: hidden;
+    /* width: 1004px;
+    height: 591px; */
   }
   

@@ -10,6 +10,26 @@ const loadFBX = (path) => {
             resolve(fbx);
           });
       });
+}
+  const createYoutube = () => {
+    return new Promise( (resolve, reject) => {
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+      const onYouTubeIframeAPIReady = () => {
+        const player = new YT.Player("player", {
+          videoId: '-w2g-SJwnPs',
+          events: {
+            onReady: () => {
+              resolve(player);
+            }
+          }
+        });
+      }
+      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+    });
   }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audioSource.setBuffer(audioClip);
     modelAnchor.group.add(audioSource);
 
+    const player = await createYoutube();
 
     const cssObj = new CSS3DObject(document.querySelector("#my-card"));
     const cssAnchor = mindarThree.addCSSAnchor(0);
@@ -48,10 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
     cssAnchor.onTargetFound = () => {
       console.log("hello");
       audioSource.play();
+      player.playVideo();
     }
     cssAnchor.onTargetLost = () => {
       console.log("bye");
       audioSource.stop();
+      player.pauseVideo();
     }
 
     const clock = new THREE.Clock();
