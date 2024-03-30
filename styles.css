@@ -1,0 +1,39 @@
+html, body {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#my-card {    
+    visibility: hidden;
+    width: 1004px;
+    height: 591px;
+    margin: 20px auto;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  #my-card img {
+    width: 40%;
+    height: auto;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+  #my-card .info {
+    flex-grow: 1;
+    padding:80px;
+    font-family: "Trebuchet MS", sans-serif; 
+  }
+  #my-card .info h1 {
+    font-size: 55px;
+    margin: 0 0 5px;
+  }
+  #my-card .info p {
+    font-size: 40px;
+    margin: 5px 0;
+  }
+  
