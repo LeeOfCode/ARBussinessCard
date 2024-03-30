@@ -41,7 +41,7 @@ html, body {
 
   #player {
     visibility: hidden;
-    /* width: 1004px;
-    height: 591px; */
+    width: 1004px;
+    height: 591px;
   }
   
